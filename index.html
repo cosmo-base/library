@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmo Base 資料館</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-logo">
+            <span class="icon">🚀</span>
+            <h1>Cosmo Base 資料館</h1>
+        </div>
+    </header>
+
+    <div class="hero-wrapper">
+        <h2>最新の資料</h2>
+        <div id="hero-card-container">
+            </div>
+    </div>
+
+    <div class="layout-lower">
+        <aside class="sidebar-left">
+            <section class="side-section">
+                <h2>ランキング</h2>
+                <ul id="ranking-list" class="side-list"></ul>
+            </section>
+
+            <section class="side-section">
+                <h2>新着リスト</h2>
+                <ul id="new-list" class="side-list"></ul>
+            </section>
+        </aside>
+
+        <main class="content-right">
+            <section class="filter-section">
+                <div class="filter-container">
+                    <div class="filter-group search-group">
+                        <label>キーワード検索</label>
+                        <input type="text" id="search-input" placeholder="タイトルや概要から探す...">
+                    </div>
+                    <div class="filter-group">
+                        <label>資料種類</label>
+                        <select id="filter-type">
+                            <option value="all">すべて</option>
+                            <option value="イベント資料">イベント資料</option>
+                            <option value="週刊ニュース">週刊ニュース</option>
+                            <option value="イベント報告書">イベント報告書</option>
+                            <option value="イベントレポート">イベントレポート</option>
+                            <option value="宇宙解説資料">宇宙解説資料</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>対象レベル</label>
+                        <select id="filter-level">
+                            <option value="all">すべて</option>
+                            <option value="初心者">初心者</option>
+                            <option value="中級者">中級者</option>
+                            <option value="上級者">上級者</option>
+                            <option value="全レベル">全レベル</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>カテゴリ</label>
+                        <select id="filter-category">
+                            <option value="all">すべて</option>
+                            <option value="宇宙開発">宇宙開発</option>
+                            <option value="天文・観測">天文・観測</option>
+                            <option value="宇宙ビジネス">宇宙ビジネス</option>
+                            <option value="エンタメ">エンタメ</option>
+                            <option value="その他">その他</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="all-section">
+                <div class="section-header-flex">
+                    <h2>資料一覧</h2>
+                    <span id="result-count" class="result-count"></span>
+                </div>
+                <div id="document-grid" class="card-grid"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
