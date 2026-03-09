@@ -1,0 +1,43 @@
+name: Update Ranking Data
+
+# 毎日 日本時間の深夜0時（UTC 15時）に自動実行
+on:
+  schedule:
+    - cron: '0 15 * * *'
+  workflow_dispatch: # 手動で実行できるボタンも用意
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: pip install google-analytics-data
+
+      - name: Create GA4 Credentials file
+        # GitHub Secretsに登録した秘密の鍵を復元する
+        run: echo '${{ secrets.GA_CREDENTIALS }}' > ga_credentials.json
+
+      - name: Run Python Script
+        # スクリプトを実行して data.json を更新
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: ga_credentials.json
+          GA4_PROPERTY_ID: ${{ secrets.GA4_PROPERTY_ID }}
+        run: python update_ranking.py
+
+      - name: Commit and Push changes
+        # 変更があればGitHubに上書き保存する
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add data.json
+          # 変更がない場合はエラーにならないようにする
+          git commit -m "Auto-update ranking views from GA4" || echo "No changes to commit"
+          git push
