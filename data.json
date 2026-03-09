@@ -1,6 +1,6 @@
 [
   {
-    "id": "001",
+    "id": "E-01",
     "title": "火星への旅 宇宙法とは",
     "date": "2026-03-08",
     "author": "FSIF",
@@ -10,15 +10,12 @@
     "tags": {
       "level": "初心者",
       "category": "その他",
-      "others": [
-        "火星への旅",
-        "宇宙法"
-      ]
+      "others": ["火星への旅","宇宙法"]
     },
-    "views": 210
+    "views": 0
   },
   {
-    "id": "002",
+    "id": "E-02",
     "title": "火星への旅 医療従事者と宇宙",
     "date": "2026-03-08",
     "author": "FSIF",
@@ -28,15 +25,12 @@
     "tags": {
       "level": "初心者",
       "category": "その他",
-      "others": [
-        "火星への旅",
-        "医療従事者"
-      ]
+      "others": ["火星への旅","医療従事者"]
     },
-    "views": 185
+    "views": 0
   },
   {
-    "id": "003",
+    "id": "E-03",
     "title": "火星への旅 科学者と宇宙",
     "date": "2026-03-08",
     "author": "FSIF",
@@ -46,15 +40,12 @@
     "tags": {
       "level": "初心者",
       "category": "宇宙開発",
-      "others": [
-        "火星への旅",
-        "科学者"
-      ]
+      "others": ["火星への旅","科学者"]
     },
-    "views": 240
+    "views": 0
   },
   {
-    "id": "004",
+    "id": "E-04",
     "title": "火星への旅 エンジニアと宇宙",
     "date": "2026-03-08",
     "author": "FSIF",
@@ -64,15 +55,12 @@
     "tags": {
       "level": "初心者",
       "category": "宇宙開発",
-      "others": [
-        "火星への旅",
-        "エンジニア"
-      ]
+      "others": ["火星への旅","エンジニア"]
     },
-    "views": 310
+    "views": 0
   },
   {
-    "id": "005",
+    "id": "E-05",
     "title": "趣味×宇宙 火星資料",
     "date": "2026-03-08",
     "author": "FSIF",
@@ -82,15 +70,12 @@
     "tags": {
       "level": "初心者",
       "category": "宇宙開発",
-      "others": [
-        "趣味×宇宙",
-        "火星"
-      ]
+      "others": ["趣味×宇宙","火星"]
     },
-    "views": 150
+    "views": 0
   },
   {
-    "id": "006",
+    "id": "E-06",
     "title": "趣味×宇宙 月面調査",
     "date": "2026-03-08",
     "author": "FSIF",
@@ -100,15 +85,12 @@
     "tags": {
       "level": "初心者",
       "category": "宇宙開発",
-      "others": [
-        "趣味×宇宙",
-        "月"
-      ]
+      "others": ["趣味×宇宙","月"]
     },
-    "views": 195
+    "views": 0
   },
   {
-    "id": "007",
+    "id": "E-07",
     "title": "趣味×宇宙 宇宙ステーション",
     "date": "2026-03-08",
     "author": "FSIF",
@@ -118,15 +100,12 @@
     "tags": {
       "level": "全レベル",
       "category": "宇宙開発",
-      "others": [
-        "趣味×宇宙",
-        "宇宙ステーション"
-      ]
+      "others": ["趣味×宇宙","宇宙ステーション"]
     },
-    "views": 280
+    "views": 0
   },
   {
-    "id": "008",
+    "id": "E-08",
     "title": "趣味×宇宙 参考資料",
     "date": "2026-03-08",
     "author": "FSIF",
@@ -136,14 +115,12 @@
     "tags": {
       "level": "初心者",
       "category": "その他",
-      "others": [
-        "趣味×宇宙"
-      ]
+      "others": ["趣味×宇宙"]
     },
-    "views": 130
+    "views": 0
   },
   {
-    "id": "009",
+    "id": "E-09",
     "title": "趣味×宇宙 課題例",
     "date": "2026-03-08",
     "author": "FSIF",
@@ -153,10 +130,143 @@
     "tags": {
       "level": "初心者",
       "category": "宇宙開発",
-      "others": [
-        "趣味×宇宙"
-      ]
+      "others": ["趣味×宇宙"]
     },
-    "views": 165
+    "views": 0
+  },
+  {
+    "id": "N-01",
+    "title": "週刊宇宙ニュース(2026年1月12日～18日)",
+    "date": "2026-01-19",
+    "author": "FSIF",
+    "type": "週刊ニュース",
+    "summary": "世界各国の宇宙開発や民間企業の動きなど、宇宙ビジネスの広がりを扱った週刊ニュースです。",
+    "url": "https://drive.google.com/file/d/111wNZspR_oofE1K7Uvc8eBFyZzzlEbVE/view?usp=sharing",
+    "tags": {
+      "level": "初心者",
+      "category": "ニュース",
+      "others": ["宇宙開発","民間企業"]
+    },
+    "views": 0
+  },
+  {
+    "id": "N-02",
+    "title": "週刊宇宙ニュース(2026年1月19日～25日)",
+    "date": "2026-01-29",
+    "author": "FSIF",
+    "type": "週刊ニュース",
+    "summary": "H3ロケットの失敗報告や宇宙企業の戦略など、宇宙開発の現実を扱った週刊ニュースです。",
+    "url": "https://drive.google.com/file/d/1nFci0BpsCLi69P63YCKBqifBw866hsr8/view?usp=sharing",
+    "tags": {
+      "level": "初心者",
+      "category": "ニュース",
+      "others": ["ロケット"]
+    },
+    "views": 0
+  },
+  {
+    "id": "N-03",
+    "title": "週刊宇宙ニュース(2026年1月26日～2月1日)",
+    "date": "2026-02-06",
+    "author": "FSIF",
+    "type": "週刊ニュース",
+    "summary": "宇宙服開発や宇宙ステーション構想など、宇宙と日常の距離の変化を扱った週刊ニュースです。",
+    "url": "https://drive.google.com/file/d/1DaGWnmwkJ39raWD9ugvzNCppcd5HzmlQ/view?usp=sharing",
+    "tags": {
+      "level": "初心者",
+      "category": "ニュース",
+      "others": ["宇宙服","宇宙ステーション"]
+    },
+    "views": 0
+  },
+  {
+    "id": "N-04",
+    "title": "週刊宇宙ニュース(2026年2月2日～8日)",
+    "date": "2026-02-11",
+    "author": "FSIF",
+    "type": "週刊ニュース",
+    "summary": "月探査や宇宙ビジネスの新しい取り組みなど、宇宙利用の広がりを扱った週刊ニュースです。",
+    "url": "https://drive.google.com/file/d/1oiA8fmf-KYt_GxzLnjl5r8rfhgFQFD_3/view?usp=sharing",
+    "tags": {
+      "level": "初心者",
+      "category": "ニュース",
+      "others": ["月探査","宇宙ビジネス"]
+    },
+    "views": 0
+  },
+  {
+    "id": "N-05",
+    "title": "週刊宇宙ニュース(2026年2月9日～15日)",
+    "date": "2026-02-18",
+    "author": "FSIF",
+    "type": "週刊ニュース",
+    "summary": "月探査や民間宇宙ビジネスの進展など、宇宙開発の次の段階を扱った週刊ニュースです。",
+    "url": "https://drive.google.com/file/d/1nsS-ITtHiLJ0zRm4aRe8ooC4ARC2sdM5/view?usp=sharing",
+    "tags": {
+      "level": "初心者",
+      "category": "ニュース",
+      "others": ["月探査","宇宙ビジネス"]
+    },
+    "views": 0
+  },
+  {
+    "id": "N-06",
+    "title": "週刊宇宙ニュース(2026年2月16日～22日)",
+    "date": "2026-02-24",
+    "author": "FSIF",
+    "type": "週刊ニュース",
+    "summary": "宇宙開発の実用化や民間企業の挑戦など、宇宙利用の拡大を扱った週刊ニュースです。",
+    "url": "https://drive.google.com/file/d/1CYgIQkyg3paaoLHhkqHCLVkGGMS9yDuU/view?usp=sharing",
+    "tags": {
+      "level": "初心者",
+      "category": "ニュース",
+      "others": ["宇宙開発","民間企業"]
+    },
+    "views": 0
+  },
+  {
+    "id": "N-07",
+    "title": "週刊宇宙ニュース(2026年2月23日～3月1日)",
+    "date": "2026-03-5",
+    "author": "FSIF",
+    "type": "週刊ニュース",
+    "summary": "月探査や宇宙ビジネスの拡大など、宇宙が産業として広がる動きを扱った週刊ニュースです。",
+    "url": "https://drive.google.com/file/d/1U7F7Itdywi_TJh9mnIKXcklg8uu7L4D0/view?usp=sharing",
+    "tags": {
+      "level": "初心者",
+      "category": "ニュース",
+      "others": ["月探査","宇宙ビジネス"]
+    },
+    "views": 0
+  },
+  {
+    "id": "s-01",
+    "title": "H3ロケット8号機：宇宙への旅、その途中で何が起きたのか？",
+    "date": "2026-01-21",
+    "author": "FSIF",
+    "type": "宇宙解説資料",
+    "summary": "H3ロケットのトラブルを題材に、打上げの仕組みと宇宙開発の難しさを解説する資料です。",
+    "url": "https://drive.google.com/file/d/1rfqE5GMu6ewMFU-PqPta7hOi7g7AABgB/view?usp=sharing",
+    "tags": {
+      "level": "初心者",
+      "category": "宇宙開発",
+      "others": ["ロケット"]
+    },
+    "views": 0
+  },
+  {
+    "id": "s-02",
+    "title": "宇宙輸送の現状 日本の宇宙輸送エコシステム",
+    "date": "2026-02-22",
+    "author": "眞鍋",
+    "type": "宇宙解説資料",
+    "summary": "日本と世界の宇宙輸送の歴史・市場構造・民間参入を整理し、宇宙輸送産業の現在地を解説する資料です。",
+    "url": "https://drive.google.com/file/d/1tNaioT6ZNNQymCb6gUF47-lTMuJekLLK/view?usp=sharing",
+    "tags": {
+      "level": "初心者",
+      "category": "宇宙開発",
+      "others": ["ロケット"]
+    },
+    "views": 0
   }
 ]
