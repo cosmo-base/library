@@ -84,7 +84,10 @@ function renderCards(data) {
         return;
     }
 
-    grid.innerHTML = data.map(doc => `
+　   // ★ここでデータを日付の新しい順（降順）に並び替える
+    const sortedData = [...data].sort((a, b) => new Date(b.date) - new Date(a.date));
+    // 並び替えたデータ(sortedData)を使ってカードを描画する
+    grid.innerHTML = sortedData.map(doc => `
         <div class="card">
             <h3>${doc.title}</h3>
             <div class="card-meta">📅 ${doc.date} | 🏷️ ${doc.type} | 👤 ${doc.author}</div>
