@@ -17,8 +17,8 @@ body {
 h1, h2, h3 { font-family: 'Noto Serif JP', serif; margin-top: 0; }
 
 .header {
-    background-color: rgba(11, 118, 160, 0.2);
-    border-bottom: 2px solid var(--bg-main);
+    background-color: var(--bg-main);
+    border-bottom: 2px solid var(--border-color);
     padding: 1rem 2rem;
 }
 .header-logo { display: flex; align-items: center; gap: 10px; }
@@ -131,4 +131,5 @@ input[type="text"]:focus, select:focus { outline: none; border-color: var(--acce
 }
 
 .card-link a:hover { background-color: var(--accent-blue); color: var(--bg-main); }
+
 
