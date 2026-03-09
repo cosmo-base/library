@@ -24,6 +24,12 @@ h1, h2, h3 { font-family: 'Noto Serif JP', serif; margin-top: 0; }
 .header-logo { display: flex; align-items: center; gap: 10px; }
 .header-logo h1 { margin: 0; font-size: 1.5rem; }
 
+/* ロゴ画像のサイズ調整 */
+.header-icon {
+    height: 32px; /* 高さを文字サイズに合わせて調整 */
+    width: auto;
+}
+
 /* 共通コンテナ幅 */
 .hero-wrapper, .layout-lower {
     max-width: 1400px;
@@ -123,4 +129,5 @@ input[type="text"]:focus, select:focus { outline: none; border-color: var(--acce
     background-color: var(--border-color); color: var(--text-main);
     text-decoration: none; border-radius: 4px; font-size: 0.9rem; font-weight: bold;
 }
+
 .card-link a:hover { background-color: var(--accent-blue); color: var(--bg-main); }
