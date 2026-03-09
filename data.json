@@ -268,5 +268,125 @@
       "others": ["ロケット"]
     },
     "views": 0
+  },
+  {
+    "id": "R-01",
+    "title": "趣味からつながる宇宙@宇宙の店 報告書",
+    "date": "2024-01-20",
+    "author": "FSIF",
+    "type": "イベント報告書",
+    "summary": "趣味×宇宙ワークショップ報告書。ペットやピアノという趣味を宇宙へ持って行ったらどのような課題、問題が発生するかを考え、その課題、問題の解決策の検討を行いました。",
+    "url": "https://drive.google.com/file/d/1xhpSm9K6_NtM_rbibrB5if7tT3RPFfiM/view?usp=sharing",
+    "tags": {
+      "level": "初心者",
+      "category": "エンタメ",
+      "others": ["趣味×宇宙","ペット","ピアノ"]
+    },
+    "views": 0
+  },
+  {
+    "id": "R-02",
+    "title": "常設活動#002 報告書",
+    "date": "2024-03-27",
+    "author": "FSIF",
+    "type": "イベント報告書",
+    "summary": "ISS「きぼう」日本実験棟利用促進に向けてどのような利用が考えられるか という問いに対し、宇宙でお風呂に入るにはどうすればよいか検討した。また、後半には「きぼう」の民間利用についてまとめた。",
+    "url": "https://drive.google.com/file/d/1YmevA2NJYD44FplCyl9FSc1cyyY0ORjX/view?usp=sharing",
+    "tags": {
+      "level": "中級者",
+      "category": "宇宙ビジネス",
+      "others": ["ISS「きぼう」","お風呂"]
+    },
+    "views": 0
+  },
+  {
+    "id": "R-03",
+    "title": "未来宇宙産業DAY ～宇宙への夢を追いかけて～ 報告書",
+    "date": "2024-05-20",
+    "author": "FSIF",
+    "type": "イベント報告書",
+    "summary": "ワークショップ報告書。[趣味×宇宙]ペットやピアノという趣味を宇宙へ持って行ったらどのような課題、問題が発生するかを考え、その課題、問題の解決策の検討を行いました。[火星への旅]火星人にあったらどうする?火星でお風呂に入るには?",
+    "url": "https://drive.google.com/file/d/1oSsvzvsXq6Ksn4k2tal_CbV6ZXwyyRCX/view?usp=sharing",
+    "tags": {
+      "level": "初心者",
+      "category": "エンタメ",
+      "others": ["趣味×宇宙","水彩画","筋トレ","火星への旅","火星人","お風呂"]
+    },
+    "views": 0
+  },
+  {
+    "id": "R-04",
+    "title": "未来宇宙産業DAY DAY2 ～趣味の世界を宇宙へ～ 報告書",
+    "date": "2024-07-04",
+    "author": "FSIF",
+    "type": "イベント報告書",
+    "summary": "趣味×宇宙ワークショップ報告書。水泳や遊園地という趣味を宇宙へ持って行ったらどのような課題、問題が発生するかを考え、その課題、問題の解決策の検討を行いました。",
+    "url": "https://drive.google.com/file/d/1jB7qb8qnTJBAQ2kFJU1-5NzLl-zYOdJG/view?usp=sharing",
+    "tags": {
+      "level": "初心者",
+      "category": "エンタメ",
+      "others": ["趣味×宇宙","水泳","遊園地"]
+    },
+    "views": 0
+  },
+  {
+    "id": "R-05",
+    "title": "常設活動#003 神奈川大学宇宙ロケット部 新入部員交流会 報告書",
+    "date": "2025-02-06",
+    "author": "FSIF",
+    "type": "イベント報告書",
+    "summary": "火星への旅ワークショップ報告書。火星で放射線を防ぐには?火星のインフラを考えよう!火星独自の新しいスポーツをかんがえよう!",
+    "url": "https://drive.google.com/file/d/1g81NbruZF94BKv92ApU48bMltznQrLA9/view?usp=drive_link",
+    "tags": {
+      "level": "中級者",
+      "category": "宇宙開発",
+      "others": ["火星への旅","放射線","インフラ","スポーツ"]
+    },
+    "views": 0
+  },
+  {
+    "id": "R-06",
+    "title": "宇宙ビジネスシンポジウム2024 ～宇宙産業の新たな夜明け～ 報告書",
+    "date": "2025-11-01",
+    "author": "FSIF",
+    "type": "イベント報告書",
+    "summary": "団体初の大規模イベント報告書。講演やパネルディスカッションを実施した。内容は学生,宇宙港,ローバー,ISS,旅行,ロケットと多岐にわたる。",
+    "url": "https://drive.google.com/file/d/19z-deD3obBazEoJn-_lPNpBX2fMyjY91/view?usp=drive_link",
+    "tags": {
+      "level": "初心者",
+      "category": "宇宙開発",
+      "others": ["学生","宇宙港","ローバー","ISS","旅行","ロケット"]
+    },
+    "views": 0
+  },
+  {
+    "id": "R-07",
+    "title": "未来宇宙産業DAY DAY3 ～趣味が織りなす宇宙の物語～ 報告書",
+    "date": "2025-10-29",
+    "author": "FSIF",
+    "type": "イベント報告書",
+    "summary": "趣味×宇宙ワークショップ報告書。鬼ごっこという趣味を宇宙へ持って行ったらどのような課題、問題が発生するかを考え、その課題、問題の解決策の検討を行いました。",
+    "url": "https://drive.google.com/file/d/1AqUu8QSMsBy38LxaZjhM8rUV6VOME0Qk/view?usp=drive_link",
+    "tags": {
+      "level": "初心者",
+      "category": "エンタメ",
+      "others": ["趣味×宇宙","鬼ごっこ"]
+    },
+    "views": 0
+  },
+  {
+    "id": "R-08",
+    "title": "YOXO FESTIVAL 2026 G-10 iSIO 宇宙学生団体による展示 FSIFブース 報告書",
+    "date": "2026-2-25",
+    "author": "FSIF",
+    "type": "イベント報告書",
+    "summary": "ブース出展報告書。「あなたが宇宙でやってみたいことは?」パネル企画、スタンプラリー企画を実施。",
+    "url": "https://drive.google.com/file/d/1NLycRma2bUK76fgNkCqGmD1rQRxkRKuP/view?usp=drive_link",
+    "tags": {
+      "level": "初心者",
+      "category": "エンタメ",
+      "others": [""]
+    },
+    "views": 0
   }
 ]
