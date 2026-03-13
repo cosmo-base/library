@@ -104,6 +104,31 @@ input[type="text"], select {
 }
 input[type="text"]:focus, select:focus { outline: none; border-color: var(--accent-blue); }
 
+/* 絞り込みリセットボタン */
+.reset-group {
+    flex: 0 0 auto; /* 横幅を広げすぎない */
+    display: flex;
+    align-items: flex-end; /* 下端（入力枠の高さ）に合わせる */
+}
+.reset-btn {
+    padding: 0.6rem 1.5rem;
+    background-color: var(--bg-main);
+    color: var(--accent-blue);
+    border: 1px solid var(--accent-blue);
+    border-radius: 4px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+    height: 41px; /* 入力欄とおおよそ高さを合わせる */
+    box-sizing: border-box;
+}
+.reset-btn:hover {
+    background-color: var(--accent-blue);
+    color: var(--bg-main);
+}
+
 /* 資料一覧ヘッダー */
 .section-header-flex { display: flex; align-items: baseline; gap: 1rem; border-bottom: 2px solid var(--border-color); margin-bottom: 1.5rem; padding-bottom: 0.5rem;}
 .section-header-flex h2 { border: none; padding: 0; margin: 0; }
@@ -131,5 +156,6 @@ input[type="text"]:focus, select:focus { outline: none; border-color: var(--acce
 }
 
 .card-link a:hover { background-color: var(--accent-blue); color: var(--bg-main); }
+
 
 
