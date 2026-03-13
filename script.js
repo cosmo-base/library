@@ -42,6 +42,15 @@ function setupFilters() {
     document.getElementById('filter-type').addEventListener('change', applyFilters);
     document.getElementById('filter-level').addEventListener('change', applyFilters);
     document.getElementById('filter-category').addEventListener('change', applyFilters);
+    document.getElementById('reset-button').addEventListener('click', () => {
+        // 各入力項目を初期値に戻す
+        document.getElementById('search-input').value = '';
+        document.getElementById('filter-type').value = 'all';
+        document.getElementById('filter-level').value = 'all';
+        document.getElementById('filter-category').value = 'all';
+        // フィルターを再適用（全件表示に戻る）
+        applyFilters();
+    });
 }
 
 // タグHTML生成
@@ -123,3 +132,4 @@ function renderNewArrivals(data) {
         </li>
     `).join('');
 }
+
