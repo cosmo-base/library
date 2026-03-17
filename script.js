@@ -1,5 +1,5 @@
 let allDocuments = [];
-let currentFilteredData = []; // 子ページなどでベースとなるデータ
+let currentFilteredData = []; 
 
 document.addEventListener('DOMContentLoaded', () => {
     fetch('data.json')
@@ -15,7 +15,6 @@ function initializeSite() {
     const isSubPage = window.location.pathname.includes('sub.html');
     const urlParams = new URLSearchParams(window.location.search);
 
-    // ヘッダーのカテゴリセレクトの挙動（選んだらsub.htmlへ飛ぶ）
     const headerSelect = document.getElementById('header-category-select');
     if (headerSelect) {
         headerSelect.addEventListener('change', (e) => {
@@ -26,10 +25,8 @@ function initializeSite() {
     }
 
     if (isSubPage) {
-        // === 子ページの場合 ===
         setupSubPage(urlParams);
     } else {
-        // === トップページの場合 ===
         renderHeroCard(allDocuments);
         renderRanking(allDocuments);
         renderNewArrivals(allDocuments);
@@ -47,37 +44,44 @@ function setupSubPage(params) {
     const titleEl = document.getElementById('page-title');
 
     let baseData = [...allDocuments];
+    let isRanking = false; // ランキングページかどうかのフラグ
 
     if (view === 'new') {
         titleEl.textContent = 'NEW（新着順）';
+    } else if (view === 'ranking') { // ★ランキング用の処理を追加
+        titleEl.textContent = 'ランキング（閲覧数順）';
+        isRanking = true; 
     } else if (view === 'beginner') {
         titleEl.textContent = '初心者向け資料';
         baseData = baseData.filter(doc => doc.tags.level === '初心者');
     } else if (view === 'recommend') {
         titleEl.textContent = '運営のおすすめ資料';
-        baseData = baseData.filter(doc => doc.isRecommend === true); // おすすめ抽出
+        baseData = baseData.filter(doc => doc.isRecommend === true);
     } else if (category) {
         titleEl.textContent = `カテゴリ：${category}`;
         baseData = baseData.filter(doc => doc.tags.category === category);
         const headerSelect = document.getElementById('header-category-select');
-        if(headerSelect) headerSelect.value = category; // セレクトボックスの表示を同期
+        if(headerSelect) headerSelect.value = category; 
     } else {
         titleEl.textContent = '資料一覧';
     }
 
-    // デフォルトで日付順にして保持
-    currentFilteredData = baseData.sort((a, b) => new Date(b.date) - new Date(a.date));
+    // ★ランキングなら閲覧数順、それ以外は日付順でベースデータを保持
+    if (isRanking) {
+        currentFilteredData = baseData.sort((a, b) => b.views - a.views);
+    } else {
+        currentFilteredData = baseData.sort((a, b) => new Date(b.date) - new Date(a.date));
+    }
+    
     renderCards(currentFilteredData);
 }
 
-// 絞り込みロジック
 function applyFilters() {
     const searchText = document.getElementById('search-input') ? document.getElementById('search-input').value.toLowerCase() : '';
     const typeValue = document.getElementById('filter-type') ? document.getElementById('filter-type').value : 'all';
     const levelValue = document.getElementById('filter-level') ? document.getElementById('filter-level').value : 'all';
     const categoryValue = document.getElementById('filter-category') ? document.getElementById('filter-category').value : 'all';
 
-    // 全件からではなく、そのページのベースデータから絞り込む
     const filtered = currentFilteredData.filter(doc => {
         const matchText = doc.title.toLowerCase().includes(searchText) || doc.summary.toLowerCase().includes(searchText);
         const matchType = (typeValue === 'all') || (doc.type === typeValue);
@@ -86,7 +90,12 @@ function applyFilters() {
         return matchText && matchType && matchLevel && matchCategory;
     });
 
-    const sortedFiltered = filtered.sort((a, b) => new Date(b.date) - new Date(a.date));
+    // ★絞り込み後も、ランキングページなら閲覧数順を維持する
+    const urlParams = new URLSearchParams(window.location.search);
+    const isRanking = urlParams.get('view') === 'ranking';
+    
+    const sortedFiltered = filtered.sort((a, b) => isRanking ? (b.views - a.views) : (new Date(b.date) - new Date(a.date)));
+    
     renderCards(sortedFiltered);
 }
 
@@ -113,7 +122,6 @@ function setupFilters() {
     }
 }
 
-// タグHTML生成
 function getTagsHTML(doc) {
     let html = `<span class="tag tag-level">${doc.tags.level}</span><span class="tag tag-category">${doc.tags.category}</span>`;
     if(doc.tags.others && doc.tags.others.length > 0) {
@@ -124,7 +132,7 @@ function getTagsHTML(doc) {
 
 function renderHeroCard(data) {
     const container = document.getElementById('hero-card-container');
-    if(!container) return; // 子ページには存在しないのでスキップ
+    if(!container) return; 
     if(data.length === 0) return;
     
     const latestDoc = [...data].sort((a, b) => new Date(b.date) - new Date(a.date))[0];
@@ -142,7 +150,7 @@ function renderHeroCard(data) {
 
 function renderRanking(data) {
     const list = document.getElementById('ranking-list');
-    if(!list) return; // 子ページには存在しないのでスキップ
+    if(!list) return; 
     const ranked = [...data].sort((a, b) => b.views - a.views).slice(0, 5);
     list.innerHTML = ranked.map((doc, i) => `
         <li><span class="rank-badge">${i + 1}位</span><a href="${doc.url}" target="_blank">${doc.title}</a></li>
@@ -151,7 +159,7 @@ function renderRanking(data) {
 
 function renderNewArrivals(data) {
     const list = document.getElementById('new-list');
-    if(!list) return; // 子ページには存在しないのでスキップ
+    if(!list) return; 
     const sorted = [...data].sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 5);
     list.innerHTML = sorted.map(doc => `
         <li><span class="rank-badge" style="font-size:0.8rem;">New</span><a href="${doc.url}" target="_blank">${doc.title}</a></li>
