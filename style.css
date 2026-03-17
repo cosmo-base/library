@@ -22,7 +22,7 @@ h1, h2, h3 { font-family: 'Noto Serif JP', serif; margin-top: 0; }
     padding: 1rem 2rem;
 }
 .header-logo { display: flex; align-items: center; gap: 10px; }
-.header-logo h1 { margin: 0; font-size: 1.5rem; }
+.header-logo h1 { margin: 0; font-size: 2rem; }
 
 /* ロゴ画像のサイズ調整 */
 .header-icon {
