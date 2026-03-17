@@ -157,5 +157,41 @@ input[type="text"]:focus, select:focus { outline: none; border-color: var(--acce
 
 .card-link a:hover { background-color: var(--accent-blue); color: var(--bg-main); }
 
+/* ヘッダー右側（ナビとカテゴリ） */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+.header-nav { display: flex; gap: 1.5rem; }
+.header-nav a {
+    color: var(--text-main); text-decoration: none; font-weight: bold; font-size: 0.95rem;
+    border-bottom: 2px solid transparent; padding-bottom: 4px; transition: color 0.2s, border-color 0.2s;
+}
+.header-nav a:hover { color: var(--accent-blue); border-bottom: 2px solid var(--accent-blue); }
+
+.header-select {
+    padding: 0.4rem 1rem; background-color: rgba(11, 118, 160, 0.2);
+    color: var(--text-main); border: 1px solid var(--accent-blue); border-radius: 4px;
+    font-family: 'Noto Sans JP', sans-serif; font-weight: bold; cursor: pointer;
+}
+.header-select option { background-color: var(--bg-main); }
+
+/* 子ページ用の1カラムレイアウト */
+.layout-single {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+.content-main { width: 100%; }
+
 
 
