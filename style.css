@@ -26,7 +26,7 @@ h1, h2, h3 { font-family: 'Noto Serif JP', serif; margin-top: 0; }
 
 /* ロゴ画像のサイズ調整 */
 .header-icon {
-    height: 40px; /* 高さを文字サイズに合わせて調整 */
+    height: 52px; /* 高さを文字サイズに合わせて調整 */
     width: auto;
 }
 
