@@ -46,7 +46,7 @@
     "type": "資料種類",
     "summary": "資料の簡単な説明文。（対象：〇〇な人）",
     "url": "Google Driveのリンク",
-　　"isRecommend": true,
+    "isRecommend": true,
     "tags": {
       "level": "対象レベル",
       "category": "カテゴリ",
