@@ -204,12 +204,63 @@ input[type="text"]:focus, select:focus { outline: none; border-color: var(--acce
 }
 
 /* ヒーローカード（最新資料）のサムネイル画像 */
+/* ヒーローカード全体を横並び（Flexbox）に変更 */
+.hero-card {
+    background: linear-gradient(135deg, rgba(0,0,68,1) 0%, rgba(11,118,160,0.3) 100%);
+    border: 1px solid var(--accent-yellow);
+    border-radius: 12px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem; /* 各要素のすき間 */
+    box-shadow: 0 4px 20px rgba(238, 238, 187, 0.1);
+    align-items: stretch; /* 高さを合わせる */
+}
+
+/* 左側（タイトル・タグ・概要） */
+.hero-content-left {
+    flex: 1; /* 横幅の割合 */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.hero-content-left h3 { font-size: 1.6rem; margin-bottom: 0.5rem; }
+.hero-content-left .card-summary { font-size: 1.05rem; margin-top: 1rem; margin-bottom: 0; }
+
+/* 中央（画像） */
+.hero-content-center {
+    flex: 1.2; /* 画像を少し広め（1.2倍）に */
+    display: flex;
+    align-items: center; /* 縦の真ん中に配置 */
+}
 .hero-card-image {
     width: 100%;
-    height: 100%;
+    height: auto;
+    max-height: 250px;
     object-fit: cover;
     border-radius: 8px;
-    margin-bottom: 1.5rem;
     border: 1px solid var(--border-color);
+    margin: 0;
+}
+
+/* 右側（ボタン） */
+.hero-content-right {
+    display: flex;
+    align-items: flex-end;
+}
+.hero-content-right .card-link a {
+    padding: 0.8rem 1.5rem; 
+    font-size: 1rem;
+}
+
+/* スマホなどで画面が狭い時は自動で縦並びに戻す設定 */
+@media (max-width: 900px) {
+    .hero-card {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .hero-content-right {
+        justify-content: flex-end;
+    }
 }
 
