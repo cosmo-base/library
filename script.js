@@ -140,11 +140,11 @@ function renderHeroCard(data) {
     const imgSrc = latestDoc.image ? latestDoc.image : 'CBlibDef.png';
     container.innerHTML = `
         <div class="hero-card">
-            <img src="${imgSrc}" alt="${latestDoc.title}" class="hero-card-image">
             <h3>${latestDoc.title}</h3>
             <div class="card-meta" style="font-size: 0.9rem;">📅 ${latestDoc.date} | 🏷️ ${latestDoc.type} | 👤 ${latestDoc.author}</div>
             <div class="card-tags">${getTagsHTML(latestDoc)}</div>
             <p class="card-summary">${latestDoc.summary}</p>
+             <img src="${imgSrc}" alt="${latestDoc.title}" class="hero-card-image">
             <div class="card-link"><a href="${latestDoc.url}" target="_blank">この資料を開く</a></div>
         </div>
     `;
