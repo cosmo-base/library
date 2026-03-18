@@ -229,15 +229,15 @@ input[type="text"]:focus, select:focus { outline: none; border-color: var(--acce
 
 /* 中央（画像） */
 .hero-content-center {
-    flex: 1.2; /* 画像を少し広め（1.2倍）に */
+    flex: 1.2;
     display: flex;
-    align-items: center; /* 縦の真ん中に配置 */
+    align-items: center; 
+    justify-content: center;
 }
 .hero-card-image {
-    width: auto;
-    height: 250px;
-    max-width: 500px;
-    object-fit: cover;
+    max-width: 100%;     
+    max-height: 250px;   
+    object-fit: contain; 
     border-radius: 8px;
     border: 1px solid var(--border-color);
     margin: 0;
