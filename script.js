@@ -187,7 +187,7 @@ function renderCards(data) {
 
     grid.innerHTML = data.map(doc => {
         // 画像が設定されていればそれを、なければデフォルト画像を使用
-        const imgSrc = img/doc.image ? doc.image : 'CBlibDef.png';
+        const imgSrc = doc.image ? doc.image : 'CBlibDef.png';
         
         return `
         <div class="card">
