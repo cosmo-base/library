@@ -133,7 +133,7 @@ function renderHeroCard(data) {
     if(data.length === 0) return;
     
     const latestDoc = [...data].sort((a, b) => new Date(b.date) - new Date(a.date))[0];
-    const imgSrc = latestDoc.image ? latestDoc.image : 'CBlibDef.png';
+    const imgSrc = latestDoc.image ? `img/${latestDoc.image}` : 'CBlibDef.png';
     
     container.innerHTML = `
         <div class="hero-card">
@@ -187,7 +187,7 @@ function renderCards(data) {
 
     grid.innerHTML = data.map(doc => {
         // 画像が設定されていればそれを、なければデフォルト画像を使用
-        const imgSrc = doc.image ? doc.image : 'CBlibDef.png';
+        const imgSrc = doc.image ? `img/${doc.image}` : 'CBlibDef.png';
         
         return `
         <div class="card">
