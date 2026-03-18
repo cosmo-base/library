@@ -137,8 +137,10 @@ function renderHeroCard(data) {
     
     const latestDoc = [...data].sort((a, b) => new Date(b.date) - new Date(a.date))[0];
     
+    const imgSrc = latestDoc.image ? latestDoc.image : 'CBlibDef.png';
     container.innerHTML = `
         <div class="hero-card">
+            <img src="${imgSrc}" alt="${latestDoc.title}" class="hero-card-image">
             <h3>${latestDoc.title}</h3>
             <div class="card-meta" style="font-size: 0.9rem;">📅 ${latestDoc.date} | 🏷️ ${latestDoc.type} | 👤 ${latestDoc.author}</div>
             <div class="card-tags">${getTagsHTML(latestDoc)}</div>
@@ -178,13 +180,19 @@ function renderCards(data) {
         return;
     }
 
-    grid.innerHTML = data.map(doc => `
+    grid.innerHTML = data.map(doc => {
+        // 画像が設定されていればそれを、なければデフォルト画像を使用
+        const imgSrc = doc.image ? doc.image : 'CBlibDef.png';
+        
+        return `
         <div class="card">
+            <img src="${imgSrc}" alt="${doc.title}" class="card-image">
             <h3>${doc.title}</h3>
             <div class="card-meta">📅 ${doc.date} | 🏷️ ${doc.type} | 👤 ${doc.author}</div>
             <div class="card-tags">${getTagsHTML(doc)}</div>
             <p class="card-summary">${doc.summary}</p>
             <div class="card-link"><a href="${doc.url}" target="_blank">資料を開く</a></div>
         </div>
-    `).join('');
+        `;
+    }).join('');
 }
