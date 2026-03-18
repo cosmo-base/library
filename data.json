@@ -321,7 +321,7 @@
   {
     "id": "F-01",
     "title": "趣味からつながる宇宙@宇宙の店 報告書",
-    "image":"趣味からつながる宇宙.jpg",
+    "image": "趣味からつながる宇宙.jpg",
     "date": "2024-01-20",
     "author": "FSIF",
     "type": "FSIF活動報告書",
@@ -341,7 +341,7 @@
   {
     "id": "F-02",
     "title": "常設活動#002 報告書",
-    "image":"J2.png",
+    "image": "J2.png",
     "date": "2024-03-27",
     "author": "FSIF",
     "type": "FSIF活動報告書",
@@ -360,7 +360,7 @@
   {
     "id": "F-03",
     "title": "未来宇宙産業DAY ～宇宙への夢を追いかけて～ 報告書",
-    "image":"FSID1.jpg",
+    "image": "FSID1.jpg",
     "date": "2024-05-20",
     "author": "FSIF",
     "type": "FSIF活動報告書",
@@ -383,7 +383,7 @@
   {
     "id": "F-04",
     "title": "未来宇宙産業DAY DAY2 ～趣味の世界を宇宙へ～ 報告書",
-    "image":"FSID2.jpg",
+    "image": "FSID2.jpg",
     "date": "2024-07-04",
     "author": "FSIF",
     "type": "FSIF活動報告書",
@@ -403,7 +403,7 @@
   {
     "id": "F-05",
     "title": "常設活動#003 神奈川大学宇宙ロケット部 新入部員交流会 報告書",
-    "image":"J3.jpg",
+    "image": "J3.jpg",
     "date": "2025-02-06",
     "author": "FSIF",
     "type": "FSIF活動報告書",
@@ -424,7 +424,7 @@
   {
     "id": "F-06",
     "title": "宇宙ビジネスシンポジウム2024 ～宇宙産業の新たな夜明け～ 報告書",
-    "image":"SBS24.jpg",
+    "image": "SBS24.jpg",
     "date": "2025-11-01",
     "author": "FSIF",
     "type": "FSIF活動報告書",
@@ -447,7 +447,7 @@
   {
     "id": "F-07",
     "title": "未来宇宙産業DAY DAY3 ～趣味が織りなす宇宙の物語～ 報告書",
-    "image":"FSID3.jpg",
+    "image": "FSID3.jpg",
     "date": "2025-10-29",
     "author": "FSIF",
     "type": "FSIF活動報告書",
@@ -466,8 +466,8 @@
   {
     "id": "F-08",
     "title": "YOXO FESTIVAL 2026 G-10 iSIO 宇宙学生団体による展示 FSIFブース 報告書",
-    "image":"YOXO26.png",
-    "date": "2026-2-25",
+    "image": "YOXO26.png",
+    "date": "2026-02-25",
     "author": "FSIF",
     "type": "FSIF活動報告書",
     "summary": "ブース出展報告書。「あなたが宇宙でやってみたいことは?」パネル企画、スタンプラリー企画を実施。",
