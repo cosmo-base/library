@@ -4,7 +4,10 @@ let currentFilteredData = [];
 document.addEventListener('DOMContentLoaded', () => {
     fetch('data.json')
         .then(response => response.json())
-        .then(data => {allDocuments = data;initializeSite();})
+        .then(data => {
+            allDocuments = data;
+            initializeSite();
+        })
         .catch(error => console.error('Error loading data:', error));
 });
 
@@ -45,7 +48,7 @@ function setupSubPage(params) {
 
     if (view === 'new') {
         titleEl.textContent = 'NEW（新着順）';
-    } else if (view === 'ranking') { // ★ランキング用の処理を追加
+    } else if (view === 'ranking') {
         titleEl.textContent = 'ランキング（閲覧数順）';
         isRanking = true; 
     } else if (view === 'beginner') {
@@ -63,7 +66,7 @@ function setupSubPage(params) {
         titleEl.textContent = '資料一覧';
     }
 
-    // ★ランキングなら閲覧数順、それ以外は日付順でベースデータを保持
+    // ランキングなら閲覧数順、それ以外は日付順でベースデータを保持
     if (isRanking) {
         currentFilteredData = baseData.sort((a, b) => b.views - a.views);
     } else {
@@ -87,7 +90,7 @@ function applyFilters() {
         return matchText && matchType && matchLevel && matchCategory;
     });
 
-    // ★絞り込み後も、ランキングページなら閲覧数順を維持する
+    // 絞り込み後も、ランキングページなら閲覧数順を維持する
     const urlParams = new URLSearchParams(window.location.search);
     const isRanking = urlParams.get('view') === 'ranking';
     
@@ -133,7 +136,14 @@ function renderHeroCard(data) {
     if(data.length === 0) return;
     
     const latestDoc = [...data].sort((a, b) => new Date(b.date) - new Date(a.date))[0];
-    const imgSrc = latestDoc.image ? `img/${latestDoc.image}` : 'CBlibDef.png';
+    
+    // 画像の出し分けロジック
+    let imgSrc = 'CBlibDef.png'; // デフォルト画像
+    if (latestDoc.image) {
+        imgSrc = `img/${latestDoc.image}`; // 個別設定があれば優先
+    } else if (latestDoc.type === '週刊ニュース') {
+        imgSrc = 'img/CBnews.png'; // タイプが週刊ニュースなら専用画像
+    }
     
     container.innerHTML = `
         <div class="hero-card">
@@ -186,8 +196,13 @@ function renderCards(data) {
     }
 
     grid.innerHTML = data.map(doc => {
-        // 画像が設定されていればそれを、なければデフォルト画像を使用
-        const imgSrc = doc.image ? `img/${doc.image}` : 'CBlibDef.png';
+        // 画像の出し分けロジック
+        let imgSrc = 'CBlibDef.png'; // デフォルト画像
+        if (doc.image) {
+            imgSrc = `img/${doc.image}`; // 個別設定があれば優先
+        } else if (doc.type === '週刊ニュース') {
+            imgSrc = 'img/CBnews.png'; // タイプが週刊ニュースなら専用画像
+        }
         
         return `
         <div class="card">
