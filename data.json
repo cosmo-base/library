@@ -586,7 +586,26 @@
     "tags": {
       "level": "初心者",
       "category": "ニュース",
-      "others": ["アルテミスII","NASA","ハロ","機動戦士ガンダム","国際宇宙ステーション","きぼう","NVIDIA","SpaceX","TERAFAB","Space Computing","AI半導体","アストロスケール","ISSA-J1","だいち","みどり","スペースデブリ","ソフトバンク","Starlink","直接通信サービス"
+      "others": [
+        "アルテミスII",
+        "NASA",
+        "ハロ",
+        "機動戦士ガンダム",
+        "国際宇宙ステーション",
+        "きぼう",
+        "NVIDIA",
+        "SpaceX",
+        "TERAFAB",
+        "Space Computing",
+        "AI半導体",
+        "アストロスケール",
+        "ISSA-J1",
+        "だいち",
+        "みどり",
+        "スペースデブリ",
+        "ソフトバンク",
+        "Starlink",
+        "直接通信サービス"
       ]
     },
     "views": 0
@@ -625,64 +644,64 @@
     "views": 0
   },
   {
-  "id": "N-13",
-  "title": "週刊宇宙ニュース(2026年4月20日～4月26日)",
-  "date": "2026-05-08",
-  "author": "FSIF",
-  "type": "週刊ニュース",
-  "summary": "醤油の宇宙醸造や人工流れ星、H3ロケット打ち上げなど、宇宙が私たちの日常に近づく動きを扱った週刊ニュースです。[cite: 1]",
-  "url": "https://drive.google.com/file/d/1kb2FKgYomsGEl81YtSvfccBZe0tL4SS6/view?usp=CBL",
-  "tags": {
-    "level": "初心者",
-    "category": "ニュース",
-    "others": [
-      "湯浅醤油",
-      "IDDK",
-      "Falcon 9",
-      "人工流れ星",
-      "ALE",
-      "Elevation Space",
-      "Redwire",
-      "バイオ医薬品",
-      "H3ロケット",
-      "JAXA",
-      "ニューグレン",
-      "New Glenn",
-      "超小型人工衛星",
-      "ロケットラボ"
-    ]
+    "id": "N-13",
+    "title": "週刊宇宙ニュース(2026年4月20日～4月26日)",
+    "date": "2026-05-08",
+    "author": "FSIF",
+    "type": "週刊ニュース",
+    "summary": "醤油の宇宙醸造や人工流れ星、H3ロケット打ち上げなど、宇宙が私たちの日常に近づく動きを扱った週刊ニュースです。[cite: 1]",
+    "url": "https://drive.google.com/file/d/1kb2FKgYomsGEl81YtSvfccBZe0tL4SS6/view?usp=CBL",
+    "tags": {
+      "level": "初心者",
+      "category": "ニュース",
+      "others": [
+        "湯浅醤油",
+        "IDDK",
+        "Falcon 9",
+        "人工流れ星",
+        "ALE",
+        "Elevation Space",
+        "Redwire",
+        "バイオ医薬品",
+        "H3ロケット",
+        "JAXA",
+        "ニューグレン",
+        "New Glenn",
+        "超小型人工衛星",
+        "ロケットラボ"
+      ]
+    },
+    "views": 0
   },
-  "views": 0
-},
   {
-  "id": "N-14",
-  "title": "週刊宇宙ニュース(2026年4月26日～5月3日)",
-  "date": "2026-05-08",
-  "author": "FSIF",
-  "type": "週刊ニュース",
-  "summary": "日本酒の宇宙発酵や月面の通信インフラ整備、AIの電力確保や衛星画像解析、デブリ除去などを扱った週刊ニュースです。",
-  "url": "https://drive.google.com/file/d/1_a65mQrBLx3FKNl-GT13YI5MWjotB2Yp/view?usp=CBL",
-  "tags": {
-    "level": "初心者",
-    "category": "ニュース",
-    "others": [
-      "獺祭",
-      "ISS",
-      "アルコール発酵",
-      "宇宙日本食",
-      "ispace",
-      "月面通信",
-      "位置情報サービス",
-      "宇宙太陽光発電",
-      "Planet",
-      "NVIDIA",
-      "衛星画像解析",
-      "アストロスケール",
-      "スペースデブリ",
-      "SpaceX",
-      "ロケット再利用"
-    ]
-  },
-  "views": 0
-}
+    "id": "N-14",
+    "title": "週刊宇宙ニュース(2026年4月26日～5月3日)",
+    "date": "2026-05-08",
+    "author": "FSIF",
+    "type": "週刊ニュース",
+    "summary": "日本酒の宇宙発酵や月面の通信インフラ整備、AIの電力確保や衛星画像解析、デブリ除去などを扱った週刊ニュースです。",
+    "url": "https://drive.google.com/file/d/1_a65mQrBLx3FKNl-GT13YI5MWjotB2Yp/view?usp=CBL",
+    "tags": {
+      "level": "初心者",
+      "category": "ニュース",
+      "others": [
+        "獺祭",
+        "ISS",
+        "アルコール発酵",
+        "宇宙日本食",
+        "ispace",
+        "月面通信",
+        "位置情報サービス",
+        "宇宙太陽光発電",
+        "Planet",
+        "NVIDIA",
+        "衛星画像解析",
+        "アストロスケール",
+        "スペースデブリ",
+        "SpaceX",
+        "ロケット再利用"
+      ]
+    },
+    "views": 0
+  }
 ]
