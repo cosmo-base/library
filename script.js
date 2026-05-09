@@ -85,7 +85,7 @@ function applyFilters() {
     const filtered = currentFilteredData.filter(doc => {
         const matchText = doc.title.toLowerCase().includes(searchText) || 
                   doc.summary.toLowerCase().includes(searchText) || 
-                  (doc.keywords && doc.keywords.toLowerCase().includes(searchText));
+                  (doc.keyword && doc.keyword.toLowerCase().includes(searchText));
         const matchType = (typeValue === 'all') || (doc.type === typeValue);
         const matchLevel = (levelValue === 'all') || (doc.tags.level === levelValue);
         const matchCategory = (categoryValue === 'all') || (doc.tags.category === categoryValue);
