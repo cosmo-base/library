@@ -83,7 +83,9 @@ function applyFilters() {
     const categoryValue = document.getElementById('filter-category') ? document.getElementById('filter-category').value : 'all';
 
     const filtered = currentFilteredData.filter(doc => {
-        const matchText = doc.title.toLowerCase().includes(searchText) || doc.summary.toLowerCase().includes(searchText);
+        const matchText = doc.title.toLowerCase().includes(searchText) || 
+                  doc.summary.toLowerCase().includes(searchText) || 
+                  (doc.keywords && doc.keywords.toLowerCase().includes(searchText));
         const matchType = (typeValue === 'all') || (doc.type === typeValue);
         const matchLevel = (levelValue === 'all') || (doc.tags.level === levelValue);
         const matchCategory = (categoryValue === 'all') || (doc.tags.category === categoryValue);
