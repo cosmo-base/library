@@ -1,17 +1,63 @@
-//library/script.js
-
 let allDocuments = [];
-let currentFilteredData = []; 
+let currentFilteredData = [];
+
+// ★ ここに公開したCSVのURLを設定
+const CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTiWVQ_iCVoOVIzzsR28wnfaWqniBFolkDs3uOn_kMcquNmiVqg1ZVV_BGjlIfsyCQlRemOXeoL4Mhw/pub?gid=0&single=true&output=csv';
 
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('data.json')
-        .then(response => response.json())
-        .then(data => {
-            allDocuments = data;
+    // data.json ではなく、CSVを読み込むように変更
+    fetch(CSV_URL)
+        .then(response => response.text())
+        .then(csvText => {
+            allDocuments = parseCSV(csvText); // CSVをデータに変換
             initializeSite();
         })
         .catch(error => console.error('Error loading data:', error));
 });
+
+// CSVテキストをJavaScriptで使えるオブジェクト配列に変換する関数
+function parseCSV(csv) {
+    const lines = csv.split('\n');
+    const result = [];
+    const headers = lines[0].split(',').map(header => header.replace(/"/g, '').trim());
+
+    // 2行目以降のデータを処理
+    for (let i = 1; i < lines.length; i++) {
+        if (!lines[i].trim()) continue; // 空行はスキップ
+        
+        // ダブルクォーテーションで囲まれたカンマを無視して分割する処理（正規表現）
+        const obj = {};
+        let currentline = lines[i].match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g) || [];
+        
+        // データが足りない場合は空文字で埋める
+        for (let j = 0; j < headers.length; j++) {
+            let val = currentline[j] ? currentline[j].replace(/^"|"$/g, '').trim() : "";
+            obj[headers[j]] = val;
+        }
+        
+        // JSONの時と同じデータ構造（tags）を作り直す
+        result.push({
+            id: obj.id,
+            title: obj.title,
+            image: obj.image,
+            date: obj.date,
+            author: obj.author,
+            type: obj.type,
+            summary: obj.summary,
+            keywords: obj.keywords,
+            url: obj.url,
+            isRecommend: obj.isRecommend === "TRUE" || obj.isRecommend === "true", // TRUEならtrueに
+            views: parseInt(obj.views) || 0, // 数値に変換
+            tags: {
+                level: obj.level,
+                category: obj.category,
+                // othersはカンマ区切りの文字列を配列に変換
+                others: obj.others ? obj.others.split(',').map(s => s.trim()).filter(s => s) : []
+            }
+        });
+    }
+    return result;
+}
 
 function initializeSite() {
     const isSubPage = window.location.pathname.includes('sub.html');
@@ -46,7 +92,7 @@ function setupSubPage(params) {
     const titleEl = document.getElementById('page-title');
 
     let baseData = [...allDocuments];
-    let isRanking = false; // ランキングページかどうかのフラグ
+    let isRanking = false; 
 
     if (view === 'new') {
         titleEl.textContent = 'NEW（新着順）';
@@ -68,7 +114,6 @@ function setupSubPage(params) {
         titleEl.textContent = '資料一覧';
     }
 
-    // ランキングなら閲覧数順、それ以外は日付順でベースデータを保持
     if (isRanking) {
         currentFilteredData = baseData.sort((a, b) => b.views - a.views);
     } else {
@@ -86,15 +131,14 @@ function applyFilters() {
 
     const filtered = currentFilteredData.filter(doc => {
         const matchText = doc.title.toLowerCase().includes(searchText) || 
-                  doc.summary.toLowerCase().includes(searchText) || 
-                  (doc.keywords && doc.keywords.toLowerCase().includes(searchText));
+                          doc.summary.toLowerCase().includes(searchText) || 
+                          (doc.keywords && doc.keywords.toLowerCase().includes(searchText));
         const matchType = (typeValue === 'all') || (doc.type === typeValue);
         const matchLevel = (levelValue === 'all') || (doc.tags.level === levelValue);
         const matchCategory = (categoryValue === 'all') || (doc.tags.category === categoryValue);
         return matchText && matchType && matchLevel && matchCategory;
     });
 
-    // 絞り込み後も、ランキングページなら閲覧数順を維持する
     const urlParams = new URLSearchParams(window.location.search);
     const isRanking = urlParams.get('view') === 'ranking';
     
@@ -141,12 +185,11 @@ function renderHeroCard(data) {
     
     const latestDoc = [...data].sort((a, b) => new Date(b.date) - new Date(a.date))[0];
     
-    // 画像の出し分けロジック
-    let imgSrc = 'CBlibDef.png'; // デフォルト画像
+    let imgSrc = 'img/CBlibDef.png';
     if (latestDoc.image) {
-        imgSrc = `img/${latestDoc.image}`; // 個別設定があれば優先
+        imgSrc = `img/${latestDoc.image}`;
     } else if (latestDoc.type === '週刊ニュース') {
-        imgSrc = 'img/CBnews.png'; // タイプが週刊ニュースなら専用画像
+        imgSrc = 'img/CBnews.png';
     }
     
     container.innerHTML = `
@@ -200,12 +243,11 @@ function renderCards(data) {
     }
 
     grid.innerHTML = data.map(doc => {
-        // 画像の出し分けロジック
-        let imgSrc = 'CBlibDef.png'; // デフォルト画像
+        let imgSrc = 'img/CBlibDef.png'; 
         if (doc.image) {
-            imgSrc = `img/${doc.image}`; // 個別設定があれば優先
+            imgSrc = `img/${doc.image}`;
         } else if (doc.type === '週刊ニュース') {
-            imgSrc = 'img/CBnews.png'; // タイプが週刊ニュースなら専用画像
+            imgSrc = 'img/CBnews.png';
         }
         
         return `
