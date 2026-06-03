@@ -1,11 +1,9 @@
 let allDocuments = [];
 let currentFilteredData = [];
 
-// ★ ここに公開したCSVのURLを設定
 const CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTiWVQ_iCVoOVIzzsR28wnfaWqniBFolkDs3uOn_kMcquNmiVqg1ZVV_BGjlIfsyCQlRemOXeoL4Mhw/pub?gid=0&single=true&output=csv';
 
 document.addEventListener('DOMContentLoaded', () => {
-    // data.json ではなく、CSVを読み込むように変更
     fetch(CSV_URL)
         .then(response => response.text())
         .then(csvText => {
@@ -199,7 +197,7 @@ function renderHeroCard(data) {
     
     const latestDoc = [...data].sort((a, b) => new Date(b.date) - new Date(a.date))[0];
     
-    let imgSrc = 'img/CBlibDef.png';
+    let imgSrc = 'CBlibDef.png';
     if (latestDoc.image) {
         imgSrc = `img/${latestDoc.image}`;
     } else if (latestDoc.type === '週刊ニュース') {
@@ -257,7 +255,7 @@ function renderCards(data) {
     }
 
     grid.innerHTML = data.map(doc => {
-        let imgSrc = 'img/CBlibDef.png'; 
+        let imgSrc = 'CBlibDef.png'; 
         if (doc.image) {
             imgSrc = `img/${doc.image}`;
         } else if (doc.type === '週刊ニュース') {
