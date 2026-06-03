@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // CSVテキストをJavaScriptで使えるオブジェクト配列に変換する関数
 function parseCSV(csv) {
-    const lines = csv.split('\n');
+    const lines = csv.split(/\r?\n/);
     const result = [];
     const headers = lines[0].split(',').map(header => header.replace(/"/g, '').trim());
 
@@ -25,17 +25,31 @@ function parseCSV(csv) {
     for (let i = 1; i < lines.length; i++) {
         if (!lines[i].trim()) continue; // 空行はスキップ
         
-        // ダブルクォーテーションで囲まれたカンマを無視して分割する処理（正規表現）
+        const currentline = [];
+        let currentVal = '';
+        let insideQuotes = false;
+
+        // 1文字ずつ確認して、カンマとダブルクォーテーションを正確に処理する
+        for (let char of lines[i]) {
+            if (char === '"' && !insideQuotes) {
+                insideQuotes = true; // ダブルクォーテーションの始まり
+            } else if (char === '"' && insideQuotes) {
+                insideQuotes = false; // ダブルクォーテーションの終わり
+            } else if (char === ',' && !insideQuotes) {
+                currentline.push(currentVal); // カンマが来たら区切る
+                currentVal = '';
+            } else {
+                currentVal += char;
+            }
+        }
+        currentline.push(currentVal); // 最後の列を追加
+
         const obj = {};
-        let currentline = lines[i].match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g) || [];
-        
-        // データが足りない場合は空文字で埋める
         for (let j = 0; j < headers.length; j++) {
-            let val = currentline[j] ? currentline[j].replace(/^"|"$/g, '').trim() : "";
-            obj[headers[j]] = val;
+            obj[headers[j]] = currentline[j] ? currentline[j].trim() : "";
         }
         
-        // JSONの時と同じデータ構造（tags）を作り直す
+        // JSONの時と同じデータ構造を作り直す
         result.push({
             id: obj.id,
             title: obj.title,
@@ -46,8 +60,8 @@ function parseCSV(csv) {
             summary: obj.summary,
             keywords: obj.keywords,
             url: obj.url,
-            isRecommend: obj.isRecommend === "TRUE" || obj.isRecommend === "true", // TRUEならtrueに
-            views: parseInt(obj.views) || 0, // 数値に変換
+            isRecommend: obj.isRecommend === "TRUE" || obj.isRecommend === "true",
+            views: parseInt(obj.views) || 0,
             tags: {
                 level: obj.level,
                 category: obj.category,
