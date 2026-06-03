@@ -196,11 +196,13 @@ input[type="text"]:focus, select:focus { outline: none; border-color: var(--acce
 /* カードのサムネイル画像 */
 .card-image {
     width: 100%;
-    height: 150px;
-    object-fit: cover;
+    height: auto;
+    max-height: 200px; /* 縦に長くなりすぎないよう制限 */
+    object-fit: contain; /* ★絶対にトリミングせずすべて収める設定 */
     border-radius: 4px;
     margin-bottom: 1rem;
     border: 1px solid var(--border-color);
+    background-color: rgba(0, 0, 34, 0.5);
 }
 
 /* ヒーローカード（最新資料）のサムネイル画像 */
@@ -235,12 +237,14 @@ input[type="text"]:focus, select:focus { outline: none; border-color: var(--acce
     justify-content: center;
 }
 .hero-card-image {
-    max-width: 100%;     
-    max-height: 250px;   
-    object-fit: contain; 
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: contain; /* ★絶対にトリミングせずすべて収める設定 */
     border-radius: 8px;
     border: 1px solid var(--border-color);
     margin: 0;
+    background-color: rgba(0, 0, 34, 0.5);
 }
 
 /* 右側（ボタン） */
