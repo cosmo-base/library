@@ -21,7 +21,7 @@ function parseCSV(csv) {
 
     // 2行目以降のデータを処理
     for (let i = 1; i < lines.length; i++) {
-        if (!lines[i].trim()) continue; // 空行はスキップ
+        if (!lines[i].trim()) continue; // 完全な空行はスキップ
         
         const currentline = [];
         let currentVal = '';
@@ -46,6 +46,9 @@ function parseCSV(csv) {
         for (let j = 0; j < headers.length; j++) {
             obj[headers[j]] = currentline[j] ? currentline[j].trim() : "";
         }
+        
+        // idとtitleが両方とも空欄の場合は、幽霊データとみなして無視する
+        if (!obj.id && !obj.title) continue;
         
         // JSONの時と同じデータ構造を作り直す
         result.push({
