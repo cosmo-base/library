@@ -135,7 +135,7 @@ input[type="text"]:focus, select:focus { outline: none; border-color: var(--acce
 .result-count { color: var(--accent-blue); font-size: 0.9rem; }
 
 /* カードグリッド */
-.card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
+.card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); gap: 1.5rem; }
 .card {
     background-color: var(--bg-card); border: 1px solid var(--border-color);
     border-radius: 8px; padding: 1.5rem; display: flex; flex-direction: column;
@@ -265,6 +265,14 @@ input[type="text"]:focus, select:focus { outline: none; border-color: var(--acce
     }
     .hero-content-right {
         justify-content: flex-end;
+    }
+
+    /* サイドバーとメインコンテンツも縦並びにして横はみ出しを防ぐ */
+    .layout-lower {
+        flex-direction: column;
+    }
+    .sidebar-left {
+        width: 100%;
     }
 }
 
